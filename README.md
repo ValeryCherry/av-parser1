@@ -54,5 +54,7 @@
 
 ***Краткая информация о команде разработчиков >>>***
 
->>> Александр Бабына https://github.com/Alba3k
->>> Екатерина Лесина https://github.com/LesinaKatherine
+```team
+Александр Бабына https://github.com/Alba3k
+Екатерина Лесина https://github.com/LesinaKatherine
+```
