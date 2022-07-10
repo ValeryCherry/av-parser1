@@ -60,8 +60,8 @@
 ***Краткая информация о команде разработчиков >>> AE Team :hammer_and_wrench:***
 
 ```team
-Александр Бабына https://github.com/Alba3k
-Екатерина Лесина https://github.com/LesinaKatherine
+Александр Бабына <code>[**GitHub profile**](https://github.com/Alba3k)</code> 
+Екатерина Лесина <code>[**GitHub profile**](https://github.com/LesinaKatherine)</code> 
 ```
 
 ***Приветствуются все пожелания и предложения по работе программы >>> :envelope:***
