@@ -114,7 +114,7 @@ def result_analyse(cars):
             city = car.find('div', class_='listing-item__location').text
             cars_detail['City'] = city
 
-    # получаем год выпуска авто, коробка, объемб тип кузова
+    # получаем год выпуска авто, коробка, объем тип кузова
             params = car.find('div', class_='listing-item__params').text
             params = params.replace(' ', '')
             params = params.split('\xa0')
@@ -187,25 +187,3 @@ if __name__ == '__main__':
     main()
 
 
-
-
-
-def html_csv():
-    global list_match
-    list_match = []
-
-    with open('data/tips/zulu_tips-14-06-2022.html', 'r', encoding='UTF8') as f:
-        contents = f.read()
-        soup = BeautifulSoup(contents, 'lxml')
-        global title
-        title = soup.title.text.split(' - ')[-1]
-
-# Список всех матчей на странице``и создаем словарь по каждому матчу`
-        list_matches = soup.find_all('tr', bgcolor=('#EFEFEF','#FFFFFF'))
-        for match in list_matches:
-            global match_detail
-            match_detail = {}
-
-# получаем даты матчей и заносим в словарь для каждого матча ````````
-            date_match = match.find_all('td')[0]
-            date_match = date_match.get_text()
