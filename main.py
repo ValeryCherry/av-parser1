@@ -153,9 +153,9 @@ def result_analyse(cars):
             cars_detail['Type_car'] = type_car
             print(cars_detail)
 
-            all_adv.append(cars_detail)
-            df = pd.DataFrame.from_dict(all_adv) 
-            print(df)
+            # all_adv.append(cars_detail)
+            # df = pd.DataFrame.from_dict(all_adv) 
+            # print(df)
 
 
     # использую функцию библиотеки Pandas для сохранения результата в csv
@@ -169,9 +169,9 @@ def pandas_writer():
 def main():
     # alpha()
     # link_download()
-    # control_files()
+    control_files()
     # replace_result()
-    # result_analyse(cars)
+    result_analyse(cars)
     # pandas_writer()
 
  
