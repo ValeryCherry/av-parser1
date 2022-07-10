@@ -74,9 +74,12 @@ def replace_result():
 def result_analyse(cars):
     global all_adv
     all_adv = []
+
     global cars_detail
     cars_detail = {}
 
+    numers_item = 0
+    
     for item in cars:
         item = item.lstrip('/')
 
@@ -151,7 +154,24 @@ def result_analyse(cars):
 
             cars_detail['Km'] = km
             cars_detail['Type_car'] = type_car
-            print(cars_detail)
+            # print(cars_detail)
+
+            lst_item = []
+            lst_item.append(cars_detail)
+
+    # номер объявления
+            numers_item = numers_item + 1
+            
+            lnk = cars_detail['Link']
+            print(f'Объявление {numers_item} добавлено в БД для экспорта. {lnk}\n')
+
+        all_adv.extend(lst_item)
+
+    print(all_adv)
+
+        # print(len(all_adv))
+        # print(all_adv)
+
 
             # all_adv.append(cars_detail)
             # df = pd.DataFrame.from_dict(all_adv) 
