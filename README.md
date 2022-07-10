@@ -11,7 +11,7 @@
                                                                  
 ```
 
-![GitHub](https://img.shields.io/badge/Alba3k-av-parser-brightgreen?style=for-the-badge)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Alba3k/av-parser?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/Alba3k/av-parser?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Alba3k/av-parser?style=for-the-badge)
 
