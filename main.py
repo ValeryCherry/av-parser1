@@ -69,14 +69,10 @@ def replace_result():
     else:
         print('Неверный путь к каталогу.')
 
-
 #````разбор страница используя lxml и экспорт в csv``````````````````
 def result_analyse(cars):
     global all_adv
     all_adv = []
-
-    global cars_detail
-    cars_detail = {}
 
     numers_item = 0
     
@@ -89,6 +85,9 @@ def result_analyse(cars):
             adv_item = soup.find_all('div', class_='listing-item__wrap')
 
         for car in adv_item:
+            global cars_detail
+            cars_detail = {}
+
     # находим ссылку на объявление, обработка ее и добавление в словарь
             link = car.find('a').get('href')
             link = 'https://cars.av.by' + link
@@ -154,32 +153,19 @@ def result_analyse(cars):
 
             cars_detail['Km'] = km
             cars_detail['Type_car'] = type_car
-            # print(cars_detail)
-
-            lst_item = []
-            lst_item.append(cars_detail)
 
     # номер объявления
             numers_item = numers_item + 1
-            
             lnk = cars_detail['Link']
-            print(f'Объявление {numers_item} добавлено в БД для экспорта. {lnk}\n')
+            print(f'Объявление {numers_item} добавлено в БД для экспорта. {lnk}')
+            all_adv.append(cars_detail)
 
-        all_adv.extend(lst_item)
+    print(f'В БД добавлено {len(all_adv)} объявлений.')
 
-    print(all_adv)
-
-        # print(len(all_adv))
-        # print(all_adv)
-
-
-            # all_adv.append(cars_detail)
-            # df = pd.DataFrame.from_dict(all_adv) 
-            # print(df)
-
+    return all_adv
 
     # использую функцию библиотеки Pandas для сохранения результата в csv
-def pandas_writer():
+def pandas_writer(all_adv):
     df = pd.DataFrame.from_dict(all_adv) 
     df.to_csv('result_data/adv_av.csv',encoding='cp1251', index = False)
 
@@ -192,7 +178,7 @@ def main():
     control_files()
     # replace_result()
     result_analyse(cars)
-    # pandas_writer()
+    pandas_writer(all_adv)
 
  
 
@@ -201,3 +187,25 @@ if __name__ == '__main__':
     main()
 
 
+
+
+
+def html_csv():
+    global list_match
+    list_match = []
+
+    with open('data/tips/zulu_tips-14-06-2022.html', 'r', encoding='UTF8') as f:
+        contents = f.read()
+        soup = BeautifulSoup(contents, 'lxml')
+        global title
+        title = soup.title.text.split(' - ')[-1]
+
+# Список всех матчей на странице``и создаем словарь по каждому матчу`
+        list_matches = soup.find_all('tr', bgcolor=('#EFEFEF','#FFFFFF'))
+        for match in list_matches:
+            global match_detail
+            match_detail = {}
+
+# получаем даты матчей и заносим в словарь для каждого матча ````````
+            date_match = match.find_all('td')[0]
+            date_match = date_match.get_text()
