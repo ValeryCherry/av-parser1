@@ -11,17 +11,12 @@
                                                                  
 ```
 
-![GitHub](https://img.shields.io/badge/Alba3k-RSPgame-brightgreen?style=for-the-badge)
-![GitHub](https://img.shields.io/github/license/Alba3k/RSPgame?style=for-the-badge)
-![GitHub repo size](https://img.shields.io/github/repo-size/Alba3k/RSPgame?style=for-the-badge)
+![GitHub](https://img.shields.io/badge/Alba3k-av-parser-brightgreen?style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Alba3k/av-parser?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/Alba3k/av-parser?style=for-the-badge)
 
 
-```python
-print('Субъективная оценка этапов выполнения проекта:')
-progress = 18.0
-print(f'project implementation in % {progress}')
-```
-***Парсер вакансий сайта Belmeta. Имя проекта >>> Belmeta_parser :pushpin:***
+***Парсер для объявлений о продаже автомобилей на сайте 'av.by'. Кодовое имя проекта >>> AV informer :pushpin:***
 - :heavy_check_mark: Описание, MVP в процессе
 - :heavy_check_mark: Кодовая база, структура кода, написание функций 
 - :heavy_check_mark: Функции: парсинг по дням 
@@ -35,8 +30,8 @@ print(f'project implementation in % {progress}')
 - :x: Реализация уведомлений, проработка каналов уведомлений
 - :hammer_and_wrench: Работа над проектом в середине, релиз на <code>[**GitHub**](https://github.com/Alba3k/belmeta-parser)</code>
 
+BMW пятой серии
 
-Парсер для объявлений о продаже автомобилей BMW пятой серии на сайте «av.by». 
 Вводные данные: не требуются. 
 Возвращённые данные: документ формата «.csv» с упорядоченной информацией по каждому объявлению. 
 Метод работы пасера: проверяет количество объявлений по нужной модели на сайте, скачивает данные для обхода защит сайта, и из них извлекает информацию о ссылке на объявление, цене (в рублях и долларах), модели и марке, годе выпуска, типе коробки передач, объеме двигателя. Также извлекает информацию о пробеге и типе кузова. Полученные данные записываются в табличном формате для дальнейшей статистической обработки или предоставления пользователю.
